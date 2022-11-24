@@ -1,0 +1,32 @@
+									<div class="row" style="margin-bottom: 35px;">
+										<div class="col-xs-12 col-12 col-md-6" style="min-height: 294px;">
+											<iframe width="100%" height="100%" src="https://www.youtube.com/embed/0u9YP2EIvyQ" 
+											title="Test Drive: Unlimited Trailer 1" frameborder="0" allow="accelerometer; 
+											autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+											allowfullscreen>
+											</iframe>
+										</div>
+										<div class="col-xs-12 col-12 col-md-6">
+											<p1 height="100%">
+												O Suzuki Escudo Pikes Peak é um carro de corrida de pista de terra fabricado pela montadora japonesa Suzuki Motor Corporation. 
+												O mesmo carro é conhecido como Sidekick na América do Norte (fabricado até 1999) e Vitara na Austrália, Europa e Filipinas. 
+												Produzido no ano de 1996, ganhou reconhecimento no mesmo ano ao participar da corrida de montanha Pikes Peak International Hill Climb, 
+												também conhecida como The Race to the Clouds.
+											</p1>
+											<p></p>
+											<div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
+													Potência: 985 cv
+												</div>
+
+												<div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
+													Velocidade máxima: 270 km/h
+												</div>
+
+												<div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
+													Peso: 900 kg
+												</div>
+											</div>
+
+										</div>
+									</div>
