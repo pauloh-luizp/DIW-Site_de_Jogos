@@ -7,6 +7,15 @@ window.onload = () =>{
   exibePlataformas()
 }
 
+procurando = () => {
+	var input = document.querySelector("#pesquise_game");
+	var texto = input.value;
+	if(texto){
+		window.location.replace("pesquisa.html"+'?search='+texto);
+	}
+	console.log(texto);
+} 
+
 exibeJogosCarrossel = () =>{
   const jogosPrincipais = [
     "need-for-speed-most-wanted",
@@ -168,12 +177,3 @@ exibePlataformas = () =>{
     document.getElementById('plataformas').innerHTML = str
   } )
 }
-
-pesquisa = () => {
-	var input = document.querySelector("#pesquise_game");
-	var texto = input.value;
-	if(texto){
-		window.location.replace("pesquisa.html"+'?search='+texto);
-	}
-	console.log(texto);
-} 

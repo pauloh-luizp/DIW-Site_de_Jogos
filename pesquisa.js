@@ -1,9 +1,10 @@
 const apiKey = "893b3e18b2ab4752a83f2cde712ccdf6";
 
-pesquisa = () => {
+pesquisa_jogos = () => {
 	var input = document.querySelector("#pesquise_game");
 	var texto = input.value;
-	if(texto){
+  console.log(texto);
+  if(texto){
 		window.location.replace("pesquisa.html"+'?search='+texto);
 	}
 	console.log(texto);
@@ -15,9 +16,9 @@ window.onload = () =>{
 
 exibeResultadoPesquisa = () =>{
 	var qs = location.search;
-  var termo_pesquisado = "Need For Speed"//qs.split('=');  
+  var termo_pesquisado = qs.split('=');
   let str = ''
-  fetch (`https://api.rawg.io/api/games?key=${apiKey}&search=${termo_pesquisado[1]}`)
+  fetch (`https://api.rawg.io/api/games?key=${apiKey}&search=${termo_pesquisado}`)
   .then(res => res.json())
   .then(data => {
         console.log(data.results)
