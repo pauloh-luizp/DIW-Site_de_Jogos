@@ -2,6 +2,7 @@ const apiKey = "893b3e18b2ab4752a83f2cde712ccdf6";
 
 window.onload = () =>{
   exibeJogosCarrossel()
+  exibeLojasCards()
 }
 
 exibeJogosCarrossel = () =>{
@@ -11,11 +12,7 @@ exibeJogosCarrossel = () =>{
     "burnout-3-takendown",
     "test-drive-unlimited"
   ];  
-  var name = ''
-  var description = ''
-  var rating = ''
-  var released = ''
-  var metacritic = ''
+
   fetch (`https://api.rawg.io/api/games?key=${apiKey}&search=${jogosPrincipais}&page=1&page_size=4`)
   .then(res => res.json())
   .then(data => {
@@ -49,11 +46,11 @@ exibeJogosCarrossel = () =>{
                   </div>
       
                   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                    Publishers: ${data.results[0].publishers}
+                    Avaliação: ${data.results[0].rating}
                   </div>
       
                   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                    Plataforma: ${data.results[0].platform}
+                    Metacritic: ${data.results[0].metacritic}
                   </div>
                 </div>
               </div>
@@ -78,22 +75,77 @@ exibeJogosCarrossel = () =>{
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                  Publishers: ${data.results[i].publishers}
+                  Avaliação: ${data.results[i].rating}
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                  Plataforma: ${data.results[i].platforms}
+                  Metacritic: ${data.results[i].metacritic}
                 </div>
               </div>
 
             </div>
           </div>
         </div>`
-      } console.log(str) 
+      } //console.log(str) 
       str += ` </div>
       </div>
     </div>
   </div>`
       document.getElementById('jogos_de_corrida_marcantes').innerHTML = str
   } )
+}
+
+exibeLojasCards = () =>{
+
+  fetch (`https://rawg.io/api/stores?key=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+        console.log(data.results)
+      let str = `<div class="container">
+            <div class="row">`
+      for(let i = 0; i < 4; i++){
+        str += 	
+        `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-12 justify-content-center">
+        <div class="card" widht="100%">
+            <div class="card-body">
+              <p class="card-text"><b>${data.results[i].name}</b></p>
+            </div>
+              <img src="${data.results[i].image_background}" style="width: 100%">
+            Mais detalhes...
+          </div>
+        </div>`
+      }
+      str += `</div>`
+    document.getElementById('card_games_corrida').innerHTML = str
+  } )
+}
+
+exibePlataformasLista = () =>{
+  let str = ''
+  fetch (`https://rawg.io/api/platforms?key=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+        console.log(data.results)
+        for(let i = 0; i < 2; i++){
+          str += 	
+          `<div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <p class="nome-categoria"><b><h4>Monopostos</h4></b></p>
+          <div class="infos-categorias">
+            <div class="componentes">
+              <p class="comp-categoria">
+                <img src="../img/monoposto.jpeg" class="card-img">
+                <h5>Principais competições</h5>
+                <ul>
+                  <li>Fórmula 1</li>
+                  <li>Fórmula E</li>                      
+                </ul>
+                <h6>Mais detalhes...</h6>
+              </p>
+            </div>
+          </div>
+        </div>`  
+    }
+    document.getElementById('plataformas').innerHTML = str
+  } )
+
 }
