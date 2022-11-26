@@ -3,14 +3,16 @@ const apiKey = "893b3e18b2ab4752a83f2cde712ccdf6";
 window.onload = () =>{
   exibeJogosCarrossel()
   exibeLojasCards()
+  exibeDesenvolvedoras()
+  exibePlataformas()
 }
 
 exibeJogosCarrossel = () =>{
   const jogosPrincipais = [
     "need-for-speed-most-wanted",
     "gran-turismo-4",
-    "burnout-3-takendown",
-    "test-drive-unlimited"
+    "Burnout 3: Takedown",
+    "Test Drive Unlimited"
   ];  
 
   fetch (`https://api.rawg.io/api/games?key=${apiKey}&search=${jogosPrincipais}&page=1&page_size=4`)
@@ -111,7 +113,6 @@ exibeLojasCards = () =>{
               <p class="card-text"><b>${data.results[i].name}</b></p>
             </div>
               <img src="${data.results[i].image_background}" style="width: 100%">
-            Mais detalhes...
           </div>
         </div>`
       }
@@ -120,26 +121,45 @@ exibeLojasCards = () =>{
   } )
 }
 
-exibePlataformasLista = () =>{
+exibeDesenvolvedoras = () =>{
+  let str = ''
+  fetch (`https://rawg.io/api/publishers?key=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+        console.log(data.results)
+        for(let i = 0; i < 3; i++){
+          str += 	
+          `<div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <p class="nome-categoria"><b><h4>${data.results[i].name}</h4></b></p>
+          <div class="infos-categorias">
+            <div class="componentes">
+              <p class="comp-categoria">
+                <img src="${data.results[i].image_background}" class="card-img">
+                <h5>Quantidade de jogos: ${data.results[i].games_count}</h5>
+              </p>
+            </div>
+          </div>
+        </div>`  
+    }
+    document.getElementById('desenvolvedoras').innerHTML = str
+  } )
+}
+
+exibePlataformas = () =>{
   let str = ''
   fetch (`https://rawg.io/api/platforms?key=${apiKey}`)
   .then(res => res.json())
   .then(data => {
         console.log(data.results)
-        for(let i = 0; i < 2; i++){
+        for(let i = 0; i < 3; i++){
           str += 	
           `<div class="col-sm-12 col-md-4 col-lg-4 col-12">
-          <p class="nome-categoria"><b><h4>Monopostos</h4></b></p>
+          <p class="nome-categoria"><b><h4>${data.results[i].name}</h4></b></p>
           <div class="infos-categorias">
             <div class="componentes">
               <p class="comp-categoria">
-                <img src="../img/monoposto.jpeg" class="card-img">
-                <h5>Principais competições</h5>
-                <ul>
-                  <li>Fórmula 1</li>
-                  <li>Fórmula E</li>                      
-                </ul>
-                <h6>Mais detalhes...</h6>
+                <img src="${data.results[i].image_background}" class="card-img">
+                <h5>Quantidade de jogos: ${data.results[i].games_count}</h5>
               </p>
             </div>
           </div>
@@ -147,5 +167,13 @@ exibePlataformasLista = () =>{
     }
     document.getElementById('plataformas').innerHTML = str
   } )
-
 }
+
+pesquisa = () => {
+	var input = document.querySelector("#pesquise_game");
+	var texto = input.value;
+	if(texto){
+		window.location.replace("pesquisa.html"+'?search='+texto);
+	}
+	console.log(texto);
+} 

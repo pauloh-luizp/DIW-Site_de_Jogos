@@ -27,7 +27,7 @@ h2 {
 }
 
 h6 {
-	color: white;
+	color: black;
 }
 
 h5 {
@@ -41,6 +41,7 @@ h4 {
 a {
 	font-size: medium;
 	margin-block: -5px;
+	text-decoration: none;
 }
 
 p {
@@ -87,6 +88,10 @@ img.img-circle {
 .container-info {
 	margin-right: 18%;
 	margin-bottom: 10%;
+}
+
+div.resultados {
+	color: black;
 }
 
 @media screen and (max-width: 1024px) {

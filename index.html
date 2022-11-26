@@ -21,10 +21,11 @@
 
 <body>
 	<script src="index.js"></script>
+	<script src="pesquisa.js"></script>
 	<header class="header">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-				<img class="navbar-brand" src="../img/NoSpeedLimitGames_logo.png" alt="logo">
+				<img class="navbar-brand" src="img/NoSpeedLimitGames_logo.png" alt="logo">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -35,22 +36,23 @@
 							<a class="nav-link active" aria-current="page" href="#destaques">Destaques</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#carros_lendarios">Lojas</a>
+							<a class="nav-link" href="index.html#carros_lendarios">Lojas</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#categoria">Categorias</a>
+							<a class="nav-link" href="index.html#categoria">Desenvolvedoras</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#publishers">Publishers</a>
+							<a class="nav-link" href="index.html#publishers">Plataformas</a>
 						</li>						
 						<li class="nav-item">
-							<a class="nav-link" href="#sobre">Sobre</a>
+							<a class="nav-link" href="index.html#sobre">Sobre</a>
 						</li>
 					</ul>
 					<form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Pesquise um Game"
-							aria-label="Search">
-						<button class="btn btn-outline-light" type="submit">Pesquisar</button>
+						<input class="form-control me-2" type="search" id="pesquise_game" placeholder="Pesquise um Game" aria-label="Search">
+						<button class="btn btn-outline-light" type="submit" onclick = "pesquisa()">
+							Pesquisar
+						</button>
 					</form>
 				</div>
 			</div>
@@ -59,6 +61,11 @@
 
 	<main class="container-main">
 		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p>Paulo Henrique Luiz Pereira - Eng de Computação - Matrícula: 673667</p>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-6">
 					<h2 class="lancamentos" id="destaques">Destaques</h2>
@@ -94,7 +101,7 @@
 					<div class="row" id="categoria">
 						<div class="col-6">
 							<div class="row titulo-categoria">
-								<h2>Categorias</h2>
+								<h2>Desenvolvedoras</h2>
 							</div>
 						</div>
 					</div>
@@ -103,7 +110,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
-								<div class="row categoria" id="plataformas">
+								<div class="row categoria" id="desenvolvedoras">
 
 									
 								</div>
@@ -113,7 +120,7 @@
 					<div class="container" style="text-align: right; margin-top: 10px;">
 						<div class="row">
 							<div class="col-12">
-								<button type="button" class="btn btn-secondary btn-sm">+ Mostrar mais categorias</button>
+								<button type="button" class="btn btn-secondary btn-sm">+ Exibir outras desenvolvedoras</button>
 							</div>
 							<p></p>
 						</div>
@@ -125,7 +132,7 @@
 					<div class="row" id="publishers">
 						<div class="col-6">
 							<div class="row titulo-categoria">
-								<h2>Publishers</h2>
+								<h2>Plataformas</h2>
 							</div>
 						</div>
 					</div>
@@ -134,55 +141,8 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
-								<div class="row categoria">
-									<div class="col-sm-12 col-md-4 col-lg-4 col-12">
-										<p class="nome-categoria"><b><h4>Mercedes-Benz</h4></b></p>
-										<div class="infos-categorias">
-											<div class="componentes">
-												<p class="comp-categoria">
-													<img src="../img/merc.jpeg" class="card-img">
-													<h5>Mercedes-Benz</h5>
-													<ul>
-														<li>Mercedes-Benz</li>
-														<li>Mercedes-Benz</li>                      
-													</ul>
-													<h6>Mais detalhes...</h6>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-12 col-md-4 col-lg-4 col-12">
-										<p class="nome-categoria"><b><h4>Mazda</h4></b></p>
-										<div class="infos-categorias">
-											<div class="componentes">
-												<p class="comp-categoria">
-													<img src="../img/mazda.jpg" class="card-img">
-													<h5>Mazda</h5>
-													<ul>
-														<li>Mazda</li>
-														<li>Mazda</li>                     
-													</ul>
-													<h6>Mais detalhes...</h6>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-12 col-md-4 col-lg-4 col-12">
-										<p class="nome-categoria"><b><h4>Suzuki</h4></b></p>
-										<div class="infos-categorias">
-											<div class="componentes">
-												<p class="comp-categoria">
-													<img src="../img/suzuki.jpeg" class="card-img">
-													<h5>Suzuki</h5>
-													<ul>
-														<li>Suzuki</li>
-														<li>Suzuki</li>                      
-													</ul>
-													<h6>Mais detalhes...</h6>
-												</p>
-											</div>
-										</div>
-									</div>
+								<div class="row categoria" id="plataformas">
+
 								</div>
 							</div>
 						</div>
@@ -190,7 +150,7 @@
 					<div class="container" style="text-align: right; margin-top: 10px;">
 						<div class="row">
 							<div class="col-12">
-								<button type="button" class="btn btn-secondary btn-sm">+ Mostrar mais Publishers</button>
+								<button type="button" class="btn btn-secondary btn-sm">+ Exibir outras Plataformas</button>
 							</div>
 							<p></p>
 						</div>
@@ -229,15 +189,15 @@
 									<div class="infos-editorial">
 										<h2>Editorial</h2>
 										<p style="margin-top: 20px;"><img height="25px" width="25px"
-												src="../img/profile.png" alt="userimg">
+												src="/img/profile.png" alt="userimg">
 											<b>Redação:</b> Paulo Pereira
 										</p>
 										<p style="margin-top: 20px;"><img height="25px" width="25px"
-												src="../img/profile.png" alt="userimg">
+												src="/img/profile.png" alt="userimg">
 											<b>Pesquisa:</b> Paulo Pereira
 										</p>
 										<p style="margin-top: 20px;"><img height="25px" width="25px"
-												src="../img/profile.png" alt="userimg">
+												src="/img/profile.png" alt="userimg">
 											<b>Gerente Geral:</b> Paulo Pereira
 										</p>
 									</div>
