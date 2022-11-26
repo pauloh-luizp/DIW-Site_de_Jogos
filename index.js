@@ -49,6 +49,9 @@ exibeJogosCarrossel = () =>{
               <div class="col-xs-12 col-12 col-md-6">
                 <p1 height="100%">
                   <h5>${data.results[0].name}</h5>
+                  <a href = "https://rawg.io/games/${data.results[0].slug}" style="text-decoration:none"> 
+                  Detalhes...
+                  </a>
                 </p1>
                 <p></p>
                 <div class="row">
@@ -78,6 +81,9 @@ exibeJogosCarrossel = () =>{
             <div class="col-xs-12 col-12 col-md-6">
               <p1 height="100%">
                 <h5>${data.results[i].name}</h5>
+                <a href = "https://rawg.io/games/${data.results[i].slug}" style="text-decoration:none"> 
+                Detalhes...
+                </a>
               </p1>
               <p></p>
               <div class="row">
@@ -93,7 +99,6 @@ exibeJogosCarrossel = () =>{
                   Metacritic: ${data.results[i].metacritic}
                 </div>
               </div>
-
             </div>
           </div>
         </div>`
